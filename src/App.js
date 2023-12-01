@@ -1,25 +1,26 @@
-import logo from './logo.svg';
+import {getUrlFromQuery, getFileTypeFromUrl }from './utils';
+import  PumlRenderer  from './components/PumlRenderer';
+import  ExcalidrawRenderer  from './components/ExcalidrawRenderer';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+ const url = getUrlFromQuery();
+  
+  if (!url) {
+    return <div>No URL found</div>;
+  }
+
+  const fileType = getFileTypeFromUrl(url);
+
+ switch (fileType) {
+    case 'puml':
+      return <PumlRenderer url={url}/>;
+    case 'excalidraw':
+      return <ExcalidrawRenderer url={url}/>;
+    default:
+      return <div>Unsupported file type</div>;
+  }
 }
 
 export default App;
