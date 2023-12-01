@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/github-diagram-viewer/static/css/main.2637940b.css",
+    "main.js": "/github-diagram-viewer/static/js/main.8ab4738d.js",
+    "index.html": "/github-diagram-viewer/index.html",
+    "main.2637940b.css.map": "/github-diagram-viewer/static/css/main.2637940b.css.map",
+    "main.8ab4738d.js.map": "/github-diagram-viewer/static/js/main.8ab4738d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2637940b.css",
+    "static/js/main.8ab4738d.js"
+  ]
+}
